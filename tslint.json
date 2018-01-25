@@ -58,7 +58,6 @@
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
-    "no-empty-interface": true,
     "no-eval": true,
     "no-inferrable-types": [
       true,
@@ -123,12 +122,6 @@
       "attribute",
       "app",
       "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
     ],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,

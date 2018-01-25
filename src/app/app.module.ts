@@ -9,6 +9,7 @@ import { AModule } from './a';
 import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
+import * as fromRoot from './app.reducer';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(fromRoot.reducer),
   ],
   bootstrap: [AppComponent]
 })

@@ -6,13 +6,13 @@ import { SharedModule } from './../shared/shared.module';
 import { A1Component } from './a1.component';
 
 import { StoreModule } from '@ngrx/store';
-import { A1Reducer } from './../../+store';
+import * as fromA1 from './a1.reducer';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    // StoreModule.forFeature('a1', A1Reducer),
+    StoreModule.forFeature(fromA1.FEATURE_NAME, fromA1.A1Reducer),
   ],
   declarations: [
       A1Component

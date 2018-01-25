@@ -3,25 +3,22 @@ import { Component, OnInit } from '@angular/core';
 import {Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
-import { AppState, AState } from './../../+store';
-import { AAction1 } from './../../+store';
+import { AAction1 } from '../a.actions';
+import * as fromA from '../a.reducer';
 
 @Component({
   selector: 'app-common',
   templateUrl: './common.component.html'
 })
 export class CommonComponent implements OnInit {
-  data$: Observable<number>;
-  aState$: Store<AState>;
-  content: number;
+  aValue$: Observable<any>;
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<fromA.State>) {
   }
 
   ngOnInit() {
-    console.log(this.store);
-    this.aState$ = this.store.select('a');
-    this.aState$.subscribe(data => this.content = data.a);
+    this.aValue$ = this.store.select(fromA.getAValue);
+    // this.aState$.subscribe(data => this.content = data.a);
   }
 
   onClick() {
